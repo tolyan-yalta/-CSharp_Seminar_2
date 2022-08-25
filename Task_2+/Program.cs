@@ -5,26 +5,24 @@ Console.Clear();
 Console.WriteLine("Введите верхний предел сгенерированного числа: ");
 int number_limit = Convert.ToInt32(Console.ReadLine());
 
-int var = 100;
-
 int number = new Random().Next(1, number_limit);
 
-if(number < var)
+int category_numbers = 100;
+
+if(number < category_numbers)
 {
    Console.WriteLine("Третьей цифры нет");
 }
 else
 {
-    while(var < number_limit)
+    while(category_numbers < number_limit)
     {
-        var = var*10;
-        if(number < var)
+        category_numbers = category_numbers * 10;
+        if(number < category_numbers)
         {
-            int temp = var / 100;
-            int temp1 = number % temp;
-            int digit = var / 1000;
-            int digit1 = temp1 / digit;
-            Console.WriteLine("Сгенерировано число " + number + ", третья цифра " + digit1);
+            int temp = number % (category_numbers / 100);
+            int digit = temp / (category_numbers / 1000);
+            Console.WriteLine("Сгенерировано число " + number + ", третья цифра " + digit);
             break;
         }
         
